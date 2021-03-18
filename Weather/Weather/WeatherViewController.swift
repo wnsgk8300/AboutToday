@@ -249,9 +249,9 @@ extension WeatherViewController: UITableViewDataSource {
 
 extension WeatherViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let firstVC = ViewController()
-        print(#function)
-        switch #function {
+        guard let firstVC = presentingViewController as? ViewController else { fatalError() }
+        print(cityWeather[indexPath.row])
+        switch cityWeather[indexPath.row] {
         case "서울":
             model.loadSeoulData(completion: {weather in
                 self.weather = weather
@@ -274,6 +274,7 @@ extension WeatherViewController: UITableViewDelegate {
                 }
             })
         case "부산":
+            print(456)
             model.loadBusanData(completion: {weather in
                 self.weather = weather
                 DispatchQueue.main.async {

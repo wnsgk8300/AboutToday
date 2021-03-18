@@ -391,7 +391,7 @@ extension ViewController : UITableViewDataSource{
         
         customCell.titleLabel.text = newsArray[indexPath.item].title
         if !imageArray.isEmpty {
-            customCell.mainImageView.image = imageArray[indexPath.item]
+//            customCell.mainImageView.image = imageArray[indexPath.item]
         }
         return customCell
     }
