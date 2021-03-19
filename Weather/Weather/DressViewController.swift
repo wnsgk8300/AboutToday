@@ -16,6 +16,7 @@ class DressViewController: UIViewController {
     let model = WeatherModel()
     var weather: Weather?
     var weatherTemp: Int? = 0
+    var dressURL = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class DressViewController: UIViewController {
     }
     
     func setImage() {
-        [dressImage, weatherLabel, temperLabel].forEach { (view) in
+        [dressImage, weatherLabel, temperLabel, dressURL].forEach { (view) in
             self.view.addSubview(view)
             view.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -53,7 +54,7 @@ class DressViewController: UIViewController {
             weatherLabel.heightAnchor.constraint(equalToConstant: 60),
             
             dressImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dressImage.topAnchor.constraint(equalTo: weatherLabel.bottomAnchor, constant: 80),
+            dressImage.topAnchor.constraint(equalTo: weatherLabel.bottomAnchor, constant: 60),
             dressImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             dressImage.heightAnchor.constraint(equalToConstant: 300),
             
@@ -62,6 +63,10 @@ class DressViewController: UIViewController {
             temperLabel.heightAnchor.constraint(equalToConstant: 30),
             temperLabel.widthAnchor.constraint(equalToConstant: 60),
             
+            dressURL.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dressURL.topAnchor.constraint(equalTo: dressImage.bottomAnchor, constant: 60),
+            dressURL.heightAnchor.constraint(equalToConstant: 60),
+            dressURL.widthAnchor.constraint(equalToConstant: 300)
             
             
             
@@ -69,8 +74,14 @@ class DressViewController: UIViewController {
         
         weatherLabel.text = "오늘 날씨에 어울리는 의상은 ????"
         weatherLabel.numberOfLines = 0
-        weatherLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
+        weatherLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         weatherLabel.textAlignment = .center
+        
+        dressURL.setTitle(">>> 옷 주문하러 가기", for: .normal)
+        dressURL.backgroundColor = UIColor.init(red: 234/255, green: 134/255, blue: 133/255, alpha: 1)
+        dressURL.addTarget(self, action: #selector(tapButton(_:)), for: .touchUpInside)
+        dressURL.layer.cornerRadius = 3
+
         
         model.loadSeoulData(completion: {weather in
             self.weather = weather
@@ -104,12 +115,12 @@ class DressViewController: UIViewController {
         
         dressImage.backgroundColor = .gray
         dressImage.layer.cornerRadius = 3
-
-        
+   
+    }
     
-        
-        
-        
+    @objc
+    func tapButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://shopping.naver.com/department/home")!)
     }
     
 }

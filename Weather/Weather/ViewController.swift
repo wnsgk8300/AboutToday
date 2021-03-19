@@ -39,7 +39,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        setTimeSchedule()
         setWeather()
         setView()
         setDate()
@@ -101,21 +100,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    func setTimeSchedule() {
-        view.addSubview(timeView)
-        timeView.translatesAutoresizingMaskIntoConstraints = false
-        timeView.backgroundColor = .systemBlue
-        
-        NSLayoutConstraint.activate([
-            timeView.topAnchor.constraint(equalTo: weatherView.bottomAnchor),
-            timeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            timeView.trailingAnchor.constraint(equalTo: view.centerXAnchor),
-            timeView.heightAnchor.constraint(equalToConstant: 160)
-        ])
-        
-        
-    }
+
     
     func setWeather() {
         view.addSubview(weatherView)
@@ -126,25 +111,25 @@ class ViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            weatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            weatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             weatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             weatherView.trailingAnchor.constraint(equalTo: view.centerXAnchor),
             weatherView.heightAnchor.constraint(equalToConstant: 160),
             
-            weatherImage.leadingAnchor.constraint(equalTo: self.weatherView.leadingAnchor, constant: 20),
+            weatherImage.leadingAnchor.constraint(equalTo: self.weatherView.leadingAnchor, constant: 10),
             weatherImage.topAnchor.constraint(equalTo: self.weatherView.topAnchor, constant: 20),
             weatherImage.heightAnchor.constraint(equalToConstant: 80),
             weatherImage.widthAnchor.constraint(equalToConstant: 80),
             
-            cityLabel.leadingAnchor.constraint(equalTo: weatherImage.trailingAnchor, constant: 20),
+            cityLabel.leadingAnchor.constraint(equalTo: weatherImage.trailingAnchor),
             cityLabel.topAnchor.constraint(equalTo: self.weatherView.topAnchor, constant: 20),
             cityLabel.heightAnchor.constraint(equalToConstant: 40),
-            cityLabel.widthAnchor.constraint(equalToConstant: 60),
+            cityLabel.widthAnchor.constraint(equalToConstant: 120),
             
             weatherLabel.leadingAnchor.constraint(equalTo: cityLabel.leadingAnchor),
             weatherLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 10),
             weatherLabel.heightAnchor.constraint(equalToConstant: 40),
-            weatherLabel.widthAnchor.constraint(equalToConstant: 60),
+            weatherLabel.widthAnchor.constraint(equalToConstant: 120),
             
             temperatureLabel.topAnchor.constraint(equalTo: weatherImage.bottomAnchor, constant: 10),
             temperatureLabel.centerXAnchor.constraint(equalTo: weatherImage.centerXAnchor),
@@ -190,15 +175,15 @@ class ViewController: UIViewController {
             }
         })
         
-        //        weatherImage.backgroundColor = .red
-        
-        //        cityLabel.backgroundColor = .gray
         cityLabel.text = "도시"
-        cityLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        //        weatherLabel.backgroundColor = .green
+        cityLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        cityLabel.sizeToFit()
+        cityLabel.textAlignment = .center
+        
         weatherLabel.text = temp
-        weatherLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        //        temperatureLabel.backgroundColor = .white
+        weatherLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        weatherLabel.textAlignment = .center
+
         temperatureLabel.text = "온도"
         temperatureLabel.font = UIFont.systemFont(ofSize: 25, weight: .light)
 
@@ -227,19 +212,19 @@ class ViewController: UIViewController {
             dressButton.centerXAnchor.constraint(equalTo: self.dressView.centerXAnchor),
             dressButton.topAnchor.constraint(equalTo: dressLabel.bottomAnchor, constant: 30),
             dressButton.heightAnchor.constraint(equalToConstant: 30),
-            dressButton.widthAnchor.constraint(equalToConstant: 180)
+            dressButton.widthAnchor.constraint(equalToConstant: 160)
         ])
         
         dressLabel.text = "오늘 날씨에 어울리는 \n 의상을 추천해 드립니다."
         dressLabel.numberOfLines = 0
         //        dressLabel.backgroundColor = .red
-        dressLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        dressLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         dressLabel.textAlignment = .right
         
         dressButton.setTitle("추천 의상 보러가기", for: .normal)
-        dressButton.backgroundColor = .gray
+        dressButton.backgroundColor = .white
         dressButton.layer.cornerRadius = 3
-        dressButton.setTitleColor(.white, for: .normal)
+        dressButton.setTitleColor(.black, for: .normal)
         let tap = UITapGestureRecognizer(target: self, action: #selector(taped(_:)))
         self.dressButton.gestureRecognizers = [tap]
         dressButton.addTarget(self, action: #selector(dressButton(_:)), for: .touchUpInside)
@@ -255,7 +240,7 @@ class ViewController: UIViewController {
         }
         
         NSLayoutConstraint.activate([
-            dayView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            dayView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             dayView.leadingAnchor.constraint(equalTo: view.centerXAnchor),
             dayView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             dayView.heightAnchor.constraint(equalToConstant: 160),
