@@ -8,14 +8,14 @@
 import Foundation
 
 struct WeatherModel {
-    let urlSeoulString = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlDaeguString = "https://api.openweathermap.org/data/2.5/weather?q=daegu&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlDaejeonString = "https://api.openweathermap.org/data/2.5/weather?q=daejeon&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlIncheonString = "https://api.openweathermap.org/data/2.5/weather?q=incheon&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlBusanString = "https://api.openweathermap.org/data/2.5/weather?q=busan&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlYeosuString = "https://api.openweathermap.org/data/2.5/weather?q=yeosu&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlGangneungString = "https://api.openweathermap.org/data/2.5/weather?q=gangneung&appid=d3f9ecac3b883d295e3988bed318f823"
-    let urlGwangjuString = "https://api.openweathermap.org/data/2.5/weather?q=gwangju&appid=d3f9ecac3b883d295e3988bed318f823"
+    let urlSeoulString = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlDaeguString = "https://api.openweathermap.org/data/2.5/weather?q=daegu&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlDaejeonString = "https://api.openweathermap.org/data/2.5/weather?q=daejeon&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlIncheonString = "https://api.openweathermap.org/data/2.5/weather?q=incheon&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlBusanString = "https://api.openweathermap.org/data/2.5/weather?q=busan&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlYeosuString = "https://api.openweathermap.org/data/2.5/weather?q=yeosu&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlGangneungString = "https://api.openweathermap.org/data/2.5/weather?q=gangneung&appid=2c932674540ed3b9dd1bcac7c1983e1f"
+    let urlGwangjuString = "https://api.openweathermap.org/data/2.5/weather?q=gwangju&appid=2c932674540ed3b9dd1bcac7c1983e1f"
     
     func loadSeoulData(completion: @escaping (Weather) -> Void) {
         guard let url = URL(string: urlSeoulString) else { fatalError() }
@@ -130,4 +130,41 @@ struct WeatherModel {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

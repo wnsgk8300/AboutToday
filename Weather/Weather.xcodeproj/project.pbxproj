@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		5E0BA626260225F500E460FD /* LoadingWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BA625260225F500E460FD /* LoadingWeather.swift */; };
 		5E530FDA2600ABAC00AF9AF3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E530FD92600ABAC00AF9AF3 /* APIKey.swift */; };
 		5E530FDE2600ADFC00AF9AF3 /* CustomNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E530FDD2600ADFC00AF9AF3 /* CustomNewsCell.swift */; };
+		5E74446B26789B0D003079C1 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74446A26789B0D003079C1 /* CalendarData.swift */; };
+		5E74446E26789B11003079C1 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74446D26789B11003079C1 /* ToDoTableViewCell.swift */; };
+		5E74447126789C1D003079C1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74447026789C1D003079C1 /* CalendarViewController.swift */; };
+		5E74447426789C21003079C1 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74447326789C21003079C1 /* AddScheduleViewController.swift */; };
 		5E92BADC25FF1B8A000CBA37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92BADB25FF1B8A000CBA37 /* AppDelegate.swift */; };
 		5E92BADE25FF1B8A000CBA37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92BADD25FF1B8A000CBA37 /* SceneDelegate.swift */; };
 		5E92BAE025FF1B8A000CBA37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E92BADF25FF1B8A000CBA37 /* ViewController.swift */; };
@@ -35,6 +39,10 @@
 		5E0BA625260225F500E460FD /* LoadingWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWeather.swift; sourceTree = "<group>"; };
 		5E530FD92600ABAC00AF9AF3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5E530FDD2600ADFC00AF9AF3 /* CustomNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNewsCell.swift; sourceTree = "<group>"; };
+		5E74446A26789B0D003079C1 /* CalendarData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
+		5E74446D26789B11003079C1 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		5E74447026789C1D003079C1 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		5E74447326789C21003079C1 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
 		5E92BAD825FF1B8A000CBA37 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E92BADB25FF1B8A000CBA37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E92BADD25FF1B8A000CBA37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +122,8 @@
 				5E92BB0025FF1CE2000CBA37 /* ScheduleViewController.swift */,
 				5E92BB0425FF1CF1000CBA37 /* WeatherViewController.swift */,
 				5E92BB0725FF1D01000CBA37 /* DressViewController.swift */,
+				5E74447026789C1D003079C1 /* CalendarViewController.swift */,
+				5E74447326789C21003079C1 /* AddScheduleViewController.swift */,
 				5E92BAE425FF1B8F000CBA37 /* Assets.xcassets */,
 				5E92BAE625FF1B8F000CBA37 /* LaunchScreen.storyboard */,
 				5E92BAE925FF1B8F000CBA37 /* Info.plist */,
@@ -135,6 +145,8 @@
 				5ED96D542600AAE50060E53A /* Stocks.swift */,
 				5E0BA5FD26021B9100E460FD /* LoadingHUD.swift */,
 				5E0BA625260225F500E460FD /* LoadingWeather.swift */,
+				5E74446A26789B0D003079C1 /* CalendarData.swift */,
+				5E74446D26789B11003079C1 /* ToDoTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,7 +179,6 @@
 				FBE710427DB07D9116459342 /* Pods-Weather.debug.xcconfig */,
 				9333045D56D5D5E12CC3EED8 /* Pods-Weather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -284,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E74447126789C1D003079C1 /* CalendarViewController.swift in Sources */,
 				5E530FDE2600ADFC00AF9AF3 /* CustomNewsCell.swift in Sources */,
 				5E92BAFB25FF1C8A000CBA37 /* WeatherTableViewCell.swift in Sources */,
 				5E92BB0525FF1CF1000CBA37 /* WeatherViewController.swift in Sources */,
@@ -291,10 +303,13 @@
 				5E92BAFE25FF1C9E000CBA37 /* ScheduleTableViewCell.swift in Sources */,
 				5ED96D4E2600AA6C0060E53A /* NetworkManager.swift in Sources */,
 				5E92BAF525FF1C5F000CBA37 /* Weather.swift in Sources */,
+				5E74446B26789B0D003079C1 /* CalendarData.swift in Sources */,
 				5ED96D522600AAB00060E53A /* News.swift in Sources */,
+				5E74447426789C21003079C1 /* AddScheduleViewController.swift in Sources */,
 				5E0BA626260225F500E460FD /* LoadingWeather.swift in Sources */,
 				5E92BB0125FF1CE2000CBA37 /* ScheduleViewController.swift in Sources */,
 				5E530FDA2600ABAC00AF9AF3 /* APIKey.swift in Sources */,
+				5E74446E26789B11003079C1 /* ToDoTableViewCell.swift in Sources */,
 				5E0BA5FE26021B9100E460FD /* LoadingHUD.swift in Sources */,
 				5E92BAE025FF1B8A000CBA37 /* ViewController.swift in Sources */,
 				5E92BADC25FF1B8A000CBA37 /* AppDelegate.swift in Sources */,
